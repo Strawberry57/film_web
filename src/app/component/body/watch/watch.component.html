@@ -1,0 +1,76 @@
+<div class="watch">
+  <div class="watch_movie">
+    <app-breadcrumb></app-breadcrumb>
+    <div class="movie">
+      <iframe
+        src="https://aa.nguonphimmoi.com/share/c74d97b01eae257e44aa9d5bade97baf"
+        frameborder="0"
+        style="width: 1440px; height: 700px"
+      ></iframe>
+      <!-- <video width="1440px" height="700px" controls>
+        <source
+          src="https://aa.nguonphimmoi.com/share/c74d97b01eae257e44aa9d5bade97baf"
+          type="video/mp4"
+        />
+        <source src="mov_bbb.ogg" type="video/ogg" />
+        Your browser does not support HTML video.
+      </video> -->
+    </div>
+    <div class="change_sever">
+      <div>
+        <span>Đổi Sever:</span>
+        <Span class="sever active">VIP #1</Span>
+        <Span class="sever">VIP #2</Span>
+      </div>
+    </div>
+    <div class="episode_wrap">
+      <div class="episode_number">
+        <span nz-icon nzType="database" nzTheme="outline"></span>
+        <h3>Danh sách tập VietSub #1</h3>
+        <div class="list-epis">
+          <p class="epis active">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+          <p class="epis">Tập 1</p>
+        </div>
+      </div>
+    </div>
+    <div class="infor_watch">
+      <div class="rating">
+        <span class="rate">Đánh giá phim</span>
+        <span>( 7.9 / 357 lượt )</span>
+        <div><nz-rate [ngModel]="0" [nzCount]="10"></nz-rate></div>
+      </div>
+      <h2>{{ title }} - Tập 1</h2>
+      <p class="subTitle">{{ subTitle }}</p>
+      <p class="description">
+        <span>{{ title }}</span> {{ description }}
+      </p>
+    </div>
+    <div class="suggest_film">
+      <h2>Có thể bạn muốn xem</h2>
+      <div class="film">
+        <app-box-film></app-box-film>
+        <app-box-film></app-box-film>
+        <app-box-film></app-box-film>
+        <app-box-film></app-box-film>
+      </div>
+    </div>
+  </div>
+</div>

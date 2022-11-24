@@ -1,0 +1,48 @@
+<div class="header">
+  <div class="start_header">
+    <div class="logo_header">
+      <img
+        style="cursor: pointer"
+        (click)="handleNavigate()"
+        alt=""
+        src="../../../assets/images/logoFilmm.png"
+      />
+    </div>
+    <div class="navbar_header">
+      <a [routerLink]="['/']">Trang Chủ</a>
+      <a [routerLink]="['/list-film/abc']">Phim Bộ</a>
+      <a>
+        Thể Loại
+        <ul class="list">
+          <a [routerLink]="['/list-film/abc']"> <li>Cổ Trang</li></a>
+          <a [routerLink]="['/list-film/abc']"><li>Hài Hước</li></a>
+          <a [routerLink]="['/list-film/abc']"><li>Hành động</li></a>
+          <a [routerLink]="['/list-film/abc']"><li>Hoạt Hình</li></a>
+          <a [routerLink]="['/list-film/abc']"><li>Người Lớn</li></a>
+          <a [routerLink]="['/list-film/abc']"><li>Tình Cảm</li></a>
+        </ul>
+      </a>
+      <a>
+        Quốc Gia
+        <ul class="list">
+          <a [routerLink]="['/list-film/abc']"><li>Hàn Quốc</li></a>
+          <a [routerLink]="['/list-film/abc']"> <li>Mỹ</li></a>
+          <li>Nhật Bản</li>
+          <li>Việt Nam</li>
+          <li>Hàn Quốc</li>
+          <li>Thái Lan</li>
+          <li>Ấn Độ</li>
+          <li>Trung Quốc</li>
+          <li>Canada</li>
+          <li>Quốc Gia Khác</li>
+        </ul>
+      </a>
+    </div>
+  </div>
+  <div class="end_header">
+    <div class="search_div">
+      <input (change)="handleChange()" placeholder="Tìm kiếm phim" />
+      <i class="eva eva-search-outline"></i>
+    </div>
+  </div>
+</div>

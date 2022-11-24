@@ -1,0 +1,27 @@
+<div class="list_film">
+  <div class="header_list">
+    <h2>Danh Sách Phim Bộ</h2>
+    <div class="header_operation">
+      <app-select></app-select>
+      <app-select></app-select>
+      <app-select></app-select>
+      <button>Lọc phim</button>
+    </div>
+  </div>
+  <app-breadcrumb></app-breadcrumb>
+  <div class="listFilm_show">
+    <app-box-film></app-box-film>
+    <app-box-film></app-box-film>
+    <app-box-film></app-box-film>
+    <app-box-film></app-box-film>
+    <app-box-film></app-box-film>
+    <app-box-film></app-box-film>
+  </div>
+  <div class="pagination">
+    <nz-pagination
+      [nzPageIndex]="1"
+      [nzTotal]="50"
+      style="display: flex; justify-content: center"
+    ></nz-pagination>
+  </div>
+</div>

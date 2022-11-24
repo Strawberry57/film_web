@@ -1,0 +1,20 @@
+<div class="hot_film">
+  <div class="title">
+    <h2>Phim thịnh hành</h2>
+  </div>
+  <div class="box_hotFilm">
+    <div (click)="handleNavigateInfor()" class="box_film_hot">
+      <img src="{{ src }}" alt="Image Deatail Film" />
+      <p class="status_film">{{ status }}</p>
+      <p class="title_film">{{ title }}</p>
+    </div>
+    <div class="list_film">
+      <app-box-film></app-box-film>
+      <app-box-film></app-box-film>
+      <app-box-film></app-box-film>
+      <app-box-film></app-box-film>
+      <app-box-film></app-box-film>
+      <app-box-film></app-box-film>
+    </div>
+  </div>
+</div>

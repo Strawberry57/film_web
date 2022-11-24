@@ -1,0 +1,50 @@
+<div class="infor_film">
+  <div class="container">
+    <app-breadcrumb></app-breadcrumb>
+    <div class="infor">
+      <div class="viewFilm" style="background-image: url({{ src }}) ">
+        <div (click)="handleNavigate()" class="play-btn">
+          <span nz-icon nzType="play-circle" nzTheme="outline"></span>
+        </div>
+        <div class="titleFilm">
+          <img src="{{ src }}" />
+          <div>
+            <h3>{{ title }}</h3>
+            <p>{{ subTitle }}</p>
+            <button (click)="handleNavigate()">Xem Phim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="infor_detail">
+      <div class="rating">
+        <nz-rate [ngModel]="0" [nzCount]="10"></nz-rate>
+        <span>( 7.9 / 357 lượt )</span>
+      </div>
+      <div class="information">
+        <p>Đang phát : <span>Hoàn Tất (34/34)</span></p>
+        <p>Tổng số tập : <span>34 tập</span></p>
+        <p>Năm phát hành: <span>2022</span></p>
+        <p>Quốc gia: <span>Âu Mỹ</span></p>
+        <p>Thể Loại: <span>Kinh dị, Hài hước</span></p>
+        <p>Đạo diễn: <span>Mewsatip Dandeind</span></p>
+        <p>Chất Lượng: <span>HD Vietsub</span></p>
+        <p>Thời lượng: <span>1 giờ 30p</span></p>
+        <p>Diễn viên: <span>Paracetamol, William Chow MuMowMow</span></p>
+      </div>
+      <div class="description">
+        <h3>Nội dung phim : {{ title }}</h3>
+        <br />
+        <p>
+          <span>{{ title }}</span> {{ description }}
+        </p>
+      </div>
+      <div class="tag">
+        <h3>Tag</h3>
+        <br />
+        <span>{{ title }}</span>
+        <span>{{ subTitle }}</span>
+      </div>
+    </div>
+  </div>
+</div>

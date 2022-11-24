@@ -1,0 +1,38 @@
+.list_film {
+  padding: 12px 20px;
+  background-color: black;
+  .header_list {
+    padding: 10px;
+    font-size: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      color: #ff8a00;
+      font-family: "Barlow Condensed", sans-serif;
+    }
+    .header_operation {
+      display: flex;
+      align-items: center;
+      button {
+        font-size: 18px;
+        padding: 0 10px;
+        background: #ff8a00;
+        color: #fff;
+        font-family: "Barlow Condensed", sans-serif;
+        border-radius: 5px;
+        margin-top: 6px;
+      }
+    }
+  }
+  .listFilm_show {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    app-box-film {
+      display: inline-flex;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+  }
+}

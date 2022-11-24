@@ -1,0 +1,41 @@
+.box_film {
+  height: 200px;
+  width: 350px;
+  position: relative;
+  cursor: pointer;
+  margin: 5px 0;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .title_film {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    color: #fff;
+    background: rgba(8, 7, 7, 0.5);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    font-size: 20px;
+    font-family: "Barlow Condensed", sans-serif;
+  }
+  .status_film {
+    position: absolute;
+    background-image: linear-gradient(to right, #c02525, #efc935);
+    top: 0;
+    min-width: 120px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 2px;
+    border-radius: 5px;
+    margin-left: 4px;
+    font-family: "Barlow Condensed", sans-serif;
+  }
+}

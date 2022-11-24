@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+
+import { ApiServiceService } from './component/service/api-service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'film-web';
+  isCollapsed = false;
+  content: any;
+  slug :any
+
+  constructor(){}
+
+  ngOnInit(){
+
+  }
 }

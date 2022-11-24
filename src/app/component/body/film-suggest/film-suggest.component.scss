@@ -1,0 +1,18 @@
+.suggest_film {
+  padding: 12px 20px;
+  background-color: black;
+  .title {
+    color: #ff8a00;
+    padding: 10px;
+    font-size: 26px;
+    h2 {
+      color: #ff8a00;
+      font-size: 26px;
+      font-family: "Barlow Condensed", sans-serif;
+    }
+  }
+  .list_film {
+    display: flex;
+    justify-content: space-between;
+  }
+}

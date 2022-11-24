@@ -1,0 +1,113 @@
+.header {
+  background-color: rgb(44, 41, 41);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  .start_header {
+    display: flex;
+    padding: 10px;
+
+    .logo_header {
+      height: 90px;
+      width: 130px;
+      background-color: #fff;
+      border-radius: 50%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: inherit;
+      }
+    }
+    .navbar_header {
+      display: flex;
+      width: 520px;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 30px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 25px;
+
+      p,
+      a {
+        cursor: pointer;
+        position: relative;
+        padding: 30px 5px;
+        color: #fff;
+        &:hover {
+          color: #c58560;
+        }
+
+        .list {
+          margin-top: 30px;
+          position: absolute;
+          background-color: rgb(44, 41, 41);
+          width: 480px;
+          display: none;
+          z-index: 2;
+          li {
+            width: 120px;
+            font-size: 23px;
+            padding: 5px;
+            display: inline-flex;
+            color: #fff;
+            &:hover {
+              color: #c55a1b;
+            }
+          }
+        }
+        &:hover {
+          .list {
+            display: block;
+            li {
+              display: inline-flex;
+            }
+          }
+        }
+        li {
+          text-decoration: none;
+          list-style: none;
+          padding: 5px;
+        }
+      }
+    }
+  }
+  .end_header {
+    display: flex;
+    align-items: center;
+    .search_div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+      width: 300px;
+      height: 50px;
+      input {
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 20px;
+        padding-left: 20px;
+        color: black;
+        &:focus-visible {
+          outline: 0;
+        }
+        &::-webkit-input-placeholder {
+          padding-left: 10px;
+        }
+      }
+      i {
+        background-color: #fff;
+        font-size: 17px;
+
+        color: black;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+}

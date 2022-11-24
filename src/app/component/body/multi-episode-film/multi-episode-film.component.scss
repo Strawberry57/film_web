@@ -1,0 +1,38 @@
+.film_muiltEpisode {
+  padding: 12px 20px;
+  background-color: black;
+  .title {
+    color: #ff8a00;
+    padding: 10px;
+    font-size: 26px;
+    display: flex;
+    justify-content: space-between;
+    h2 {
+      font-size: 26px;
+      color: #ff8a00;
+      font-family: "Barlow Condensed", sans-serif;
+    }
+    p {
+      background-color: rgb(94, 92, 92);
+      color: #fff;
+      padding: 0px 5px;
+      border-radius: 5px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Barlow Condensed", sans-serif;
+
+      cursor: pointer;
+      &:hover {
+        color: rgb(94, 92, 92);
+        background-color: #fff;
+      }
+    }
+  }
+  .list_film {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,30 @@
+<div class="film_onePart">
+  <div class="title">
+    <h2>Phim lẻ</h2>
+    <p (click)="handleNavigate()">
+      Xem tất cả <i class="eva eva-arrow-ios-forward-outline"></i>
+    </p>
+  </div>
+  <div class="box_onePart">
+    <div (click)="handleNavigateInfor()" class="box_film_onePart">
+      <img src="{{ src }}" alt="Image Deatail Film" />
+      <p class="status_film">{{ status }}</p>
+      <p class="title_film">{{ title }}</p>
+    </div>
+    <div class="list_film">
+      <ng-container *ngIf="arrayFilmChange.length > 0">
+        <ng-container *ngFor="let film of arrayFilmChange; let i = index">
+          <ng-container *ngIf="i < 7">
+            <app-box-film [filmBox]="film"></app-box-film>
+          </ng-container> </ng-container
+      ></ng-container>
+    </div>
+  </div>
+  <div class="other_film">
+    <app-box-film></app-box-film>
+    <app-box-film></app-box-film>
+    <app-box-film></app-box-film>
+    <app-box-film></app-box-film>
+    <app-box-film></app-box-film>
+  </div>
+</div>

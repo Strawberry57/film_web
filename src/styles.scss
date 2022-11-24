@@ -1,1 +1,121 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/eva-icons/style/eva-icons.css";
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+// @import "~ng-zorro-antd/style/index.min.css"; /* Import base styles */
+// @import "~ng-zorro-antd/button/style/index.min.css"; /* Import one component's styles */
+// @import "~ng-zorro-antd/ng-zorro-antd.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+p,
+h2,
+h3,
+h4,
+span,
+button {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+:root {
+  font-family: "Barlow Condensed", sans-serif;
+}
+.breadcrumb {
+  background-color: black;
+  border: 5px solid rgb(132 130 132);
+  border-left: 10px solid rgb(44, 41, 41);
+  border-right: 10px solid rgb(44, 41, 41);
+  padding: 5px 10px;
+  z-index: 3;
+
+  nz-breadcrumb {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    nz-breadcrumb-item {
+      color: #fff !important;
+      font-size: 18px;
+      .home {
+        color: #ff8a00;
+        font-size: 18px;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+      .span.ant-breadcrumb-separator.ng-star-inserted {
+        color: #fff !important;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+      .ant-breadcrumb-separator {
+        color: #fff !important;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+      span {
+        color: #fff;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+    }
+  }
+}
+
+.list_film {
+  .pagination {
+    nz-pagination {
+      li.ant-pagination-item.ant-pagination-item-active.ng-star-inserted {
+        background: black;
+        border: 1px solid #ff8a00;
+        a {
+          color: #ff8a00;
+        }
+      }
+      li.ant-pagination-item.ng-star-inserted {
+        background: black;
+        border: 1px solid #fff;
+        a {
+          color: #fff;
+        }
+      }
+      li.ant-pagination-prev.ant-pagination-disabled.ng-star-inserted {
+        display: none;
+      }
+      li.ant-pagination-next.ng-star-inserted {
+        background-color: black;
+        border: 0;
+        button {
+          color: #fff;
+          background-color: black;
+        }
+      }
+      li.ant-pagination-prev.ng-star-inserted {
+        background-color: black;
+        border: 0;
+        button {
+          color: #fff;
+          background-color: black;
+        }
+      }
+      li.ant-pagination-next.ng-star-inserted.ant-pagination-disabled {
+        display: none;
+      }
+    }
+  }
+}
+.infor_film {
+  .infor {
+    .viewFilm {
+      .play-btn {
+        z-index: 3;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        right: 50%;
+        cursor: pointer;
+        span {
+          color: #ff8a00;
+          font-size: 100px;
+        }
+      }
+    }
+  }
+}

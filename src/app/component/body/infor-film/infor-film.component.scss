@@ -1,0 +1,143 @@
+.infor_film {
+  padding: 12px 20px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  .container {
+    max-width: 1440px;
+
+    .infor {
+      display: flex;
+      justify-content: center;
+      .viewFilm {
+        height: 722px;
+        width: 100%;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &::before {
+          content: "";
+          background: rgba(87, 83, 83, 0.5);
+          z-index: 1;
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          left: 0;
+          right: 0;
+        }
+        img {
+          // height: 100%;
+          // width: 100%;
+          object-fit: cover;
+        }
+        .titleFilm {
+          margin-left: 10px;
+          position: absolute;
+          height: 200px;
+          z-index: 2;
+          // width: 320px;
+          width: 100%;
+          bottom: 0;
+          display: flex;
+          img {
+            object-fit: cover;
+            height: 100%;
+            width: 320px;
+            border-radius: 5px;
+          }
+          div {
+            flex: 1;
+            h3,
+            p {
+              color: #fff;
+              margin-left: 30px;
+              margin-bottom: 30px;
+            }
+            h3 {
+              font-size: 26px;
+            }
+            p {
+              font-size: 20px;
+            }
+            button {
+              color: #fff;
+              background-color: rgb(240, 49, 49);
+              font-size: 20px;
+              border-radius: 5px;
+              margin-left: 30px;
+              padding: 5px 10px;
+              border: 1px solid rgb(240, 49, 49);
+              outline: 0;
+              &:hover {
+                color: rgb(240, 49, 49);
+                background-color: #fff;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+    .infor_detail {
+      background-color: rgba(87, 83, 83, 0.5);
+      padding: 10px 20px;
+      margin-top: 30px;
+      .rating {
+        span {
+          font-size: 20px;
+          color: #fff;
+          margin-left: 20px;
+        }
+      }
+      .information {
+        p {
+          display: inline-block;
+          min-width: calc(100% / 3);
+          padding: 5px 10px;
+          margin-bottom: 5px;
+          color: #fff;
+          font-size: 20px;
+          span {
+            margin-left: 10px;
+            color: #ff8a00;
+            font-size: 20px;
+          }
+        }
+      }
+      .description {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        h3 {
+          font-size: 22px;
+          color: #ff8a00;
+        }
+        p {
+          font-size: 18px;
+          color: #fff;
+          span {
+            font-size: 19px;
+            color: #ff8a00;
+          }
+        }
+      }
+      .tag {
+        h3 {
+          font-size: 22px;
+          color: #ff8a00;
+        }
+        span {
+          padding: 5px 10px;
+          font-size: 15px;
+          background-color: rgba(87, 83, 83, 0.5);
+          color: #fff;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
