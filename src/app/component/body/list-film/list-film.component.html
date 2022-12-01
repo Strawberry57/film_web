@@ -10,12 +10,10 @@
   </div>
   <app-breadcrumb></app-breadcrumb>
   <div class="listFilm_show">
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
+    <ng-container *ngIf="listFilm.length > 0">
+      <ng-container *ngFor="let film of listFilm; let i = index">
+        <app-box-film [filmBox]="film"></app-box-film> </ng-container
+    ></ng-container>
   </div>
   <div class="pagination">
     <nz-pagination

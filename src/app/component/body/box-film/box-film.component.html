@@ -1,6 +1,6 @@
-<a [routerLink]="['/infor-film']">
+<a (click)="routerLink(filmBox)">
   <div class="box_film">
-    <img src="{{ filmBox?.movie?.thumb_url }}" alt="Image Deatail Film" />
+    <img src="{{ filmBox?.movie?.poster_url }}" alt="Image Deatail Film" />
     <p class="status_film">{{ filmBox?.movie?.episode_current }}</p>
     <p class="title_film">{{ filmBox?.movie?.name }}</p>
   </div>

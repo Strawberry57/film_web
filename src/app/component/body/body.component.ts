@@ -13,7 +13,7 @@ export class BodyComponent {
   constructor(private api : ApiServiceService) { }
 
   ngOnInit(): void {
-    // this.arrFilm =  this.api.getslug().subscribe(res => this.arrFilm = res)
+    this.arrFilm =  this.api.getslug().subscribe(res => this.arrFilm = res)
   }
 
 }

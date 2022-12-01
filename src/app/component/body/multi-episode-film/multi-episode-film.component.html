@@ -6,15 +6,11 @@
     </p>
   </div>
   <div class="list_film">
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
+    <ng-container *ngIf="arrayFilm.length > 0">
+      <ng-container *ngFor="let film of arrayFilm; let i = index">
+        <ng-container *ngIf="i < 10">
+          <app-box-film [filmBox]="film"></app-box-film>
+        </ng-container> </ng-container
+    ></ng-container>
   </div>
 </div>

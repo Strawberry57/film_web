@@ -1,20 +1,48 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
+import { ApiServiceService } from '../../service/api-service.service';
 
 @Component({
   selector: 'app-watch',
   templateUrl: './watch.component.html',
-  styleUrls: ['./watch.component.scss']
+  styleUrls: ['./watch.component.scss'],
 })
 export class WatchComponent implements OnInit {
-
-  title : string = "Lời mời đến từ địa ngục";
-  src : string ="../../../../assets/images/maxresdefault.jpg";
-  status : string ="Tập 1 | Vietsub"
-  subTitle : string = "The Invitation From Hell (2022)"
-  description: string = "là câu chuyện sau khi mẹ qua đời, Evie không còn bất kỳ người thân nào trên đời. Cô quyết định làm xét nghiệm ADN và phát hiện ra mình còn một người em họ đã thất lạc từ lâu. Nhờ vậy mà Evie được gia đình người này mời đến dự một đám cưới xa hoa ở vùng nông thôn nước Anh. Ban đầu, cô có cảm tình với một chàng quý tộc điển trai nhưng nhanh chóng bị đẩy vào cơn ác mộng khi khám phá ra những bí mật đen tối trong lịch sử gia đình mình và âm mưu kinh hoàng đằng sau sự xa hoa của họ"
-  constructor() { }
+  film: any;
+  filmContent: string;
+  link: any;
+  episodes: any;
+  isChangeEpisode: boolean = true;
+  isActive: boolean = false;
+  name: any;
+  arrayFilm : any = []
+  constructor(private readonly api: ApiServiceService) {}
 
   ngOnInit(): void {
-  }
+    const films: any = localStorage.getItem('film');
+    this.film = JSON.parse(films);
+    this.filmContent = JSON.parse(films)
+      .movie.content.replace('<p>', '')
+      .replace('</p>', '');
+    this.filmContent = this.filmContent.substring(
+      0,
+      this.filmContent.length - 1
+    );
 
+    this.link = JSON.parse(films).episodes[0].server_data[0].link_embed;
+
+    this.episodes = JSON.parse(films).episodes[0].server_data;
+
+    this.name = JSON.parse(films).episodes[0].server_data[0].name;
+
+    this.arrayFilm = this.api.getslug().subscribe((e: any) => this.arrayFilm = e)
+  }
+  changeEpisode(e: any) {
+    this.link = e.link_embed;
+    this.name = e.name;
+    this.isChangeEpisode = false;
+    setTimeout(() => {
+      this.isChangeEpisode = true;
+    }, 2000);
+  }
 }

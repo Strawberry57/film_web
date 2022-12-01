@@ -3,18 +3,21 @@
     <h2>Phim thịnh hành</h2>
   </div>
   <div class="box_hotFilm">
-    <div (click)="handleNavigateInfor()" class="box_film_hot">
-      <img src="{{ src }}" alt="Image Deatail Film" />
-      <p class="status_film">{{ status }}</p>
-      <p class="title_film">{{ title }}</p>
+    <div (click)="handleNavigateInfor(arrayFilm[1])" class="box_film_hot">
+      <img
+        src="{{ arrayFilm[1]?.movie?.poster_url }}"
+        alt="Image Deatail Film"
+      />
+      <p class="status_film">{{ arrayFilm[1]?.movie?.episode_current }}</p>
+      <p class="title_film">{{ arrayFilm[1]?.movie?.name }}</p>
     </div>
     <div class="list_film">
-      <app-box-film></app-box-film>
-      <app-box-film></app-box-film>
-      <app-box-film></app-box-film>
-      <app-box-film></app-box-film>
-      <app-box-film></app-box-film>
-      <app-box-film></app-box-film>
+      <ng-container *ngIf="arrayFilmChange.length > 0">
+        <ng-container *ngFor="let film of arrayFilmChange; let i = index">
+          <ng-container *ngIf="i < 6">
+            <app-box-film [filmBox]="film"></app-box-film>
+          </ng-container> </ng-container
+      ></ng-container>
     </div>
   </div>
 </div>

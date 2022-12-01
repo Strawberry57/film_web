@@ -32,6 +32,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination'
 import { NzRateModule } from 'ng-zorro-antd/rate';
+import { SafePipe } from './component/pipe/safePipe';
 
 
 
@@ -54,7 +55,8 @@ registerLocaleData(vi);
     SelectComponent,
     BreadcrumbComponent,
     InforFilmComponent,
-    WatchComponent
+    WatchComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

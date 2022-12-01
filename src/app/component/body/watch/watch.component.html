@@ -2,19 +2,20 @@
   <div class="watch_movie">
     <app-breadcrumb></app-breadcrumb>
     <div class="movie">
-      <iframe
-        src="https://aa.nguonphimmoi.com/share/c74d97b01eae257e44aa9d5bade97baf"
-        frameborder="0"
-        style="width: 1440px; height: 700px"
-      ></iframe>
-      <!-- <video width="1440px" height="700px" controls>
-        <source
-          src="https://aa.nguonphimmoi.com/share/c74d97b01eae257e44aa9d5bade97baf"
-          type="video/mp4"
-        />
-        <source src="mov_bbb.ogg" type="video/ogg" />
-        Your browser does not support HTML video.
-      </video> -->
+      <ng-container *ngIf="isChangeEpisode; else change">
+        <iframe
+          [src]="link | safe"
+          frameborder="0"
+          style="width: 1440px; height: 700px"
+        ></iframe>
+      </ng-container>
+      <ng-template #change>
+        <iframe
+          [src]=""
+          frameborder="0"
+          style="width: 1440px; height: 700px"
+        ></iframe>
+      </ng-template>
     </div>
     <div class="change_sever">
       <div>
@@ -28,26 +29,19 @@
         <span nz-icon nzType="database" nzTheme="outline"></span>
         <h3>Danh sách tập VietSub #1</h3>
         <div class="list-epis">
-          <p class="epis active">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
-          <p class="epis">Tập 1</p>
+          <ng-container *ngFor="let epis of episodes">
+            <ng-container *ngIf="name == epis.name; else notActive">
+              <p (click)="changeEpisode(epis)" class="epis active">
+                Tập - {{ epis.name }}
+              </p></ng-container
+            >
+
+            <ng-template #notActive>
+              <p (click)="changeEpisode(epis)" class="epis">
+                Tập - {{ epis.name }}
+              </p>
+            </ng-template>
+          </ng-container>
         </div>
       </div>
     </div>
@@ -57,19 +51,21 @@
         <span>( 7.9 / 357 lượt )</span>
         <div><nz-rate [ngModel]="0" [nzCount]="10"></nz-rate></div>
       </div>
-      <h2>{{ title }} - Tập 1</h2>
-      <p class="subTitle">{{ subTitle }}</p>
+      <h2>{{ film.episodes[0].server_data[0].filename }}</h2>
+      <p class="subTitle">{{ film?.movie?.origin_name }}</p>
       <p class="description">
-        <span>{{ title }}</span> {{ description }}
+        <span>{{ film?.movie?.name }}</span> {{ filmContent }}
       </p>
     </div>
     <div class="suggest_film">
       <h2>Có thể bạn muốn xem</h2>
       <div class="film">
-        <app-box-film></app-box-film>
-        <app-box-film></app-box-film>
-        <app-box-film></app-box-film>
-        <app-box-film></app-box-film>
+        <ng-container *ngIf="arrayFilm.length > 0">
+          <ng-container *ngFor="let film of arrayFilm; let i = index">
+            <ng-container *ngIf="i < 4">
+              <app-box-film [filmBox]="film"></app-box-film>
+            </ng-container> </ng-container
+        ></ng-container>
       </div>
     </div>
   </div>

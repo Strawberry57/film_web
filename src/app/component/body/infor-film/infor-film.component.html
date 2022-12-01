@@ -2,15 +2,18 @@
   <div class="container">
     <app-breadcrumb></app-breadcrumb>
     <div class="infor">
-      <div class="viewFilm" style="background-image: url({{ src }}) ">
+      <div
+        class="viewFilm"
+        style="background-image: url({{ film.movie.poster_url }}) "
+      >
         <div (click)="handleNavigate()" class="play-btn">
           <span nz-icon nzType="play-circle" nzTheme="outline"></span>
         </div>
         <div class="titleFilm">
-          <img src="{{ src }}" />
+          <img src="{{ film.movie.poster_url }}" />
           <div>
-            <h3>{{ title }}</h3>
-            <p>{{ subTitle }}</p>
+            <h3>{{ film.movie.name }}</h3>
+            <p>{{ film.movie.origin_name }}</p>
             <button (click)="handleNavigate()">Xem Phim</button>
           </div>
         </div>
@@ -22,28 +25,51 @@
         <span>( 7.9 / 357 lượt )</span>
       </div>
       <div class="information">
-        <p>Đang phát : <span>Hoàn Tất (34/34)</span></p>
-        <p>Tổng số tập : <span>34 tập</span></p>
-        <p>Năm phát hành: <span>2022</span></p>
-        <p>Quốc gia: <span>Âu Mỹ</span></p>
-        <p>Thể Loại: <span>Kinh dị, Hài hước</span></p>
-        <p>Đạo diễn: <span>Mewsatip Dandeind</span></p>
-        <p>Chất Lượng: <span>HD Vietsub</span></p>
-        <p>Thời lượng: <span>1 giờ 30p</span></p>
-        <p>Diễn viên: <span>Paracetamol, William Chow MuMowMow</span></p>
+        <p>
+          Đang phát : <span>{{ film.movie.episode_current }}</span>
+        </p>
+        <p>
+          Tổng số tập : <span>{{ film.movie.episode_total }}</span>
+        </p>
+        <p>
+          Năm phát hành: <span>{{ film.movie.year }}</span>
+        </p>
+        <p>
+          Quốc gia: <span>{{ film.movie.country[0].name }}</span>
+        </p>
+        <p>
+          Thể Loại:
+          <ng-container *ngFor="let cat of film.movie.category"
+            ><span>{{ cat.name }}</span></ng-container
+          >
+        </p>
+        <p>
+          Đạo diễn: <span>{{ film.movie.director[0] }}</span>
+        </p>
+        <p>
+          Chất Lượng: <span>{{ film.movie.quality }}</span>
+        </p>
+        <p>
+          Thời lượng: <span>{{ film.movie.time }}</span>
+        </p>
+        <p>
+          Diễn viên:<ng-container *ngFor="let cat of film.movie.actor"
+            ><span>{{ cat }}</span></ng-container
+          >
+        </p>
       </div>
       <div class="description">
-        <h3>Nội dung phim : {{ title }}</h3>
+        <h3>Nội dung phim : {{ film.movie.name }}</h3>
         <br />
         <p>
-          <span>{{ title }}</span> {{ description }}
+          <span>{{ film.movie.name }}</span> {{ filmContent }}
         </p>
       </div>
       <div class="tag">
         <h3>Tag</h3>
         <br />
-        <span>{{ title }}</span>
-        <span>{{ subTitle }}</span>
+        <span>{{ film.movie.name }}</span>
+        <span>{{ film.movie.origin_name }}</span>
       </div>
     </div>
   </div>

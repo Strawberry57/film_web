@@ -6,10 +6,13 @@
     </p>
   </div>
   <div class="box_onePart">
-    <div (click)="handleNavigateInfor()" class="box_film_onePart">
-      <img src="{{ src }}" alt="Image Deatail Film" />
-      <p class="status_film">{{ status }}</p>
-      <p class="title_film">{{ title }}</p>
+    <div (click)="handleNavigateInfor(arrayFilm[0])" class="box_film_onePart">
+      <img
+        src="{{ arrayFilm[0]?.movie?.poster_url }}"
+        alt="Image Deatail Film"
+      />
+      <p class="status_film">{{ arrayFilm[0]?.movie?.episode_current }}</p>
+      <p class="title_film">{{ arrayFilm[0]?.movie?.name }}</p>
     </div>
     <div class="list_film">
       <ng-container *ngIf="arrayFilmChange.length > 0">
@@ -21,10 +24,11 @@
     </div>
   </div>
   <div class="other_film">
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
-    <app-box-film></app-box-film>
+    <ng-container *ngIf="FilmChange.length > 0">
+      <ng-container *ngFor="let film of FilmChange; let i = index">
+        <ng-container *ngIf="i < 5">
+          <app-box-film [filmBox]="film"></app-box-film>
+        </ng-container> </ng-container
+    ></ng-container>
   </div>
 </div>

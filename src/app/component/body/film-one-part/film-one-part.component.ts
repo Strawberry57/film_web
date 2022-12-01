@@ -14,16 +14,19 @@ export class FilmOnePartComponent implements OnInit {
   constructor(private router : Router) { }
   @Input() arrayFilm : any
   arrayFilmChange: any =[]
+  FilmChange: any = []
   ngOnInit(): void {
   }
   handleNavigate(){
     this.router.navigate(["/list-film/abc"])
   }
-  handleNavigateInfor(){
+  handleNavigateInfor(e : any){
+    localStorage.setItem("film",JSON.stringify(e))
     this.router.navigate(["/infor-film"])
   }
   ngOnChanges(){
-    this.arrayFilmChange = this.arrayFilm.splice(0,5)
+    this.arrayFilmChange = this.arrayFilm?.splice(0,6)
+    this.FilmChange = this.arrayFilm?.splice(0,5)
   }
 
 }

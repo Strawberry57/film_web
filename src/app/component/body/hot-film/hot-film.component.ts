@@ -14,10 +14,15 @@ export class HotFilmComponent implements OnInit {
   constructor(private readonly router:Router) { }
 
   @Input() arrayFilm : any
-
+  arrayFilmChange: any = []
   ngOnInit(): void {
   }
-  handleNavigateInfor(){
+  handleNavigateInfor(e : any){
+    localStorage.setItem("film",JSON.stringify(e))
+
     this.router.navigate(["/infor-film"])
+  }
+  ngOnChanges(){
+    this.arrayFilmChange = this.arrayFilm?.splice(5,11)
   }
 }
